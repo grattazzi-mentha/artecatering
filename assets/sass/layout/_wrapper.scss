@@ -71,16 +71,11 @@
 
 							// Hack: Chrome's grid implementation screws up absolute element placement within a static child element.
 
-								// Set width on all child elements and right-align.
-									> * {
-										width: (_size(header-width) - $pad);
+								// Add space under and over logo.
+									> img {
+										margin-top: 2rem;
+										margin-bottom: 2rem;
 									}
-
-									// Add space under and over logo.
-										> img {
-											margin-top: 2rem;
-											margin-bottom: 2rem;
-										}
 
 									// Logo positioning inside h1
 										> h1 > img {

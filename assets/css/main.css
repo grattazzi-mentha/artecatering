@@ -3471,10 +3471,6 @@ input, select, textarea {
 				width: 32rem;
 			}
 
-		#wrapper > section.intro > header > * {
-			width: 20rem;
-		}
-
 		#wrapper > section.intro > header:before {
 			margin-left: calc(50vw - 10rem);
 		}
@@ -3544,13 +3540,6 @@ input, select, textarea {
 						width: 30rem;
 					}
 
-				#wrapper > section.intro > header > * {
-					width: 21rem;
-				}
-
-				#wrapper > section.intro > header:before {
-					margin-left: calc(50vw - 8rem);
-				}
 
 		}
 
