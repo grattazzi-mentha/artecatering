@@ -3328,7 +3328,16 @@ input, select, textarea {
 				position: relative;
 			}
 
-				#wrapper > section > header h1:before, #wrapper > section > header h2:before {
+				#wrapper > section > header h1:before {
+					background: #6A5648;
+					content: '';
+					display: block;
+					height: 2px;
+					position: absolute;
+					top: calc(50% - 1px);
+				}
+
+				#wrapper > section > header h2:before {
 					background: #6A5648;
 					content: '';
 					display: block;
@@ -3337,28 +3346,31 @@ input, select, textarea {
 					top: 1rem;
 				}
 
-				#wrapper > section > header h1:after, #wrapper > section > header h2:after {
+				#wrapper > section > header h1:after {
 					background: #6A5648;
-					border-radius: 0.5rem;
+					border-radius: 50%;
 					content: '';
 					display: block;
-					height: 0.5rem;
+					height: 8px;
 					position: absolute;
-					top: 0.75rem;
-					width: 0.5rem;
+					top: calc(50% - 4px);
+					width: 8px;
+				}
+
+				#wrapper > section > header h2:after {
+					background: #6A5648;
+					border-radius: 50%;
+					content: '';
+					display: block;
+					height: 8px;
+					position: absolute;
+					top: calc(1rem - 3px);
+					width: 8px;
 				}
 
 			#wrapper > section > header h1 {
 				margin-top: -2rem;
 			}
-
-				#wrapper > section > header h1:before {
-					top: 3rem;
-				}
-
-				#wrapper > section > header h1:after {
-					top: 2.75rem;
-				}
 
 			#wrapper > section > .content > section {
 				position: relative;
@@ -3400,13 +3412,13 @@ input, select, textarea {
 				}
 
 		#wrapper > section:last-of-type > header:after {
-				border-radius: 0.5rem;
+				border-radius: 50%;
 				bottom: -1.5rem;
 				content: '';
 				display: block;
-				height: 0.5rem;
+				height: 8px;
 				position: absolute;
-				width: 0.5rem;
+				width: 8px;
 				z-index: 1;
 			}
 
