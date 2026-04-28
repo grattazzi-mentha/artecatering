@@ -248,6 +248,10 @@ input, select, textarea {
 		text-transform: none;
 	}
 
+	#wrapper > section.intro > header h1 {
+		font-size: 2.5rem;
+	}
+
 	h2 {
 		font-size: 1.25rem;
 		font-weight: 800;
@@ -278,6 +282,10 @@ input, select, textarea {
 			line-height: 1.1;
 		}
 
+		#wrapper > section.intro > header h1 {
+			font-size: 2.25rem;
+		}
+
 		h2 {
 			font-size: 1.25rem;
 			line-height: 1.7;
@@ -301,6 +309,10 @@ input, select, textarea {
 
 		h1 {
 			font-size: 3.75rem;
+		}
+
+		#wrapper > section.intro > header h1 {
+			font-size: 1.875rem;
 		}
 
 		h2 {
@@ -3378,8 +3390,12 @@ input, select, textarea {
 				}
 
 					#wrapper > section.intro > header > * {
-						margin-left: auto;
-					}
+				margin-left: 0;
+			}
+
+			#wrapper > section.intro > header > img {
+				display: block;
+				margin-bottom: 2rem;
 
 					#wrapper > section.intro > header:before {
 						left: auto;
