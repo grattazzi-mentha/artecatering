@@ -3285,8 +3285,8 @@ input, select, textarea {
 				margin: 0 0 1.5rem 0;
 			}
 
-				#wrapper section > header h2:before, #wrapper section > header h2:after {
-					display: none;
+				#wrapper > section > header h2:before, #wrapper > section > header h2:after {
+					display: none !important;
 				}
 				#wrapper section > header h1 + p {
 					font-family: "Raleway", Helvetica, sans-serif;
@@ -3385,6 +3385,7 @@ input, select, textarea {
 					}
 
 					#wrapper > section.intro > header > img {
+						margin-top: 2rem;
 						margin-bottom: 2rem;
 					}
 

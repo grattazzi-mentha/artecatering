@@ -76,8 +76,9 @@
 										width: (_size(header-width) - $pad);
 									}
 
-									// Add space under logo.
+									// Add space under and over logo.
 										> img {
+											margin-top: 2rem;
 											margin-bottom: 2rem;
 										}
 
@@ -207,7 +208,7 @@
 						margin: 0 0 1.5rem 0;
 
 						&:before, &:after {
-							display: none;
+							display: none !important;
 						}
 					}
 
