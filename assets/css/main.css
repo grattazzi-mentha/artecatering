@@ -3460,6 +3460,12 @@ input, select, textarea {
 			width: auto;
 		}
 
+		#wrapper > section.intro > header > img {
+			max-width: 85%;
+			display: block;
+			margin-left: auto;
+		}
+
 		#wrapper > section.intro > header:before {
 			margin-left: calc(50vw - 10rem);
 		}
