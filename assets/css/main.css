@@ -220,6 +220,7 @@ input, select, textarea {
 	}
 
 	p {
+		line-height: 1.4;
 		margin: 0 0 2rem 0;
 	}
 
@@ -3292,6 +3293,12 @@ input, select, textarea {
 					line-height: 1.5;
 				}
 
+				#wrapper > section.intro > header h1 + p {
+					font-size: 1rem;
+					letter-spacing: 0.0375em;
+					line-height: 1.4;
+				}
+
 				#wrapper section > header ul.actions {
 					justify-content: flex-end;
 				}
@@ -3300,6 +3307,42 @@ input, select, textarea {
 				grid-area: content;
 				max-width: 60rem;
 				position: relative;
+			}
+
+			#wrapper > section:not(.intro) > .content > * {
+				margin-bottom: 0.9rem;
+			}
+
+			#wrapper > section:not(.intro) > .content > *:last-child {
+				margin-bottom: 0;
+			}
+
+			#wrapper > section:not(.intro) > .content > section > .content > * {
+				margin-bottom: 0.9rem;
+			}
+
+			#wrapper > section:not(.intro) > .content p {
+				margin: 0 0 1rem 0;
+			}
+
+			#wrapper > section:not(.intro) > .content > section > header h3 {
+				margin: 0 0 0.5rem 0;
+			}
+
+			#wrapper > section:not(.intro) > .content > section > header p {
+				margin: 0.5rem 0 0 0;
+			}
+
+			#wrapper > section:not(.intro) ul.feature-icons {
+				margin: 1.5rem 0 0.75rem 0;
+			}
+
+			#wrapper > section:not(.intro) ul.feature-icons li {
+				margin: 1.25rem 0 0 0;
+			}
+
+			#wrapper > section:not(.intro) > .content > section > .content > *:last-child {
+				margin-bottom: 0;
 			}
 
 			#wrapper section > footer {
@@ -3374,10 +3417,11 @@ input, select, textarea {
 
 			#wrapper > section > .content > section {
 				position: relative;
+				margin-top: 1.25rem;
 			}
 
 				#wrapper > section > .content > section:first-child {
-					margin-top: 6rem;
+					margin-top: 0.75rem;
 				}
 
 			#wrapper > section.intro {
