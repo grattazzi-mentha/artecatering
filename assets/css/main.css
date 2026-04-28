@@ -3370,7 +3370,7 @@ input, select, textarea {
 				}
 
 			#wrapper > section.intro {
-				align-items: center;
+				align-items: flex-start;
 			}
 
 				#wrapper > section.intro > header {
