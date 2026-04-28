@@ -3357,13 +3357,25 @@ input, select, textarea {
 
 		#wrapper > section.intro > header h1 {
 			margin-left: auto;
+			margin-bottom: 3rem;
 		}
 
 			#wrapper > section.intro > header h1 > img {
+				max-width: 120px;
+				height: auto;
 				margin-top: 2rem;
 				margin-bottom: 2rem;
 				display: block;
 			}
+
+			#wrapper > section.intro > header h1:before {
+				top: calc(2rem + 0.75rem);
+			}
+
+			#wrapper > section.intro > header h1:after {
+				top: calc(2rem + 0.75rem);
+			}
+
 				#wrapper > section > header h1:before {
 					top: 1rem;
 				}

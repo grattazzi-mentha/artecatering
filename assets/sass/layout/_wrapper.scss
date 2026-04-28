@@ -79,6 +79,8 @@
 
 									// Logo positioning inside h1
 										> h1 > img {
+											max-width: 120px;
+											height: auto;
 											margin-top: 2rem;
 											margin-bottom: 2rem;
 											display: block;
@@ -87,6 +89,12 @@
 									// Align h1 (with logo) to the right
 										> h1 {
 											margin-left: auto;
+											margin-bottom: 3rem;
+										}
+
+									// Position line and dot to align with logo
+										> h1:before, > h1:after {
+											top: calc(2rem + 0.75rem);
 										}
 
 								// Line.
