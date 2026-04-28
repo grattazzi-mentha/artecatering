@@ -125,7 +125,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #ffffff;
+		background: #f7f4ef;
 		overflow-x: hidden;
 	}
 
@@ -179,12 +179,12 @@ input, select, textarea {
 		}
 
 	body {
-		background-color: #ffffff;
-		color: #000000;
+		background-color: #f7f4ef;
+		color: #2f2924;
 	}
 
 	body, input, select, textarea {
-		color: #000000;
+		color: #2f2924;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 1rem;
 		font-weight: 300;
@@ -198,7 +198,7 @@ input, select, textarea {
 		-ms-transition: border-bottom-color 0.25s ease-in-out;
 		transition: border-bottom-color 0.25s ease-in-out;
 		text-decoration: none;
-		color: #000000;
+		color: #2f2924;
 		border-bottom: dotted 1px;
 	}
 
@@ -224,7 +224,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #000000;
+		color: #4D3D33;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 600;
 		letter-spacing: 0.175em;
@@ -239,7 +239,7 @@ input, select, textarea {
 		}
 
 	h1 {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Raleway", Helvetica, sans-serif;
 		font-size: 5rem;
 		font-weight: 700;
 		letter-spacing: -0.05em;
@@ -1887,8 +1887,8 @@ input, select, textarea {
 		background-color: transparent;
 		border-radius: 0.325rem;
 		border: 0;
-		box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
-		color: #000000 !important;
+		box-shadow: inset 0 0 0 2px rgba(106, 86, 72, 0.4);
+		color: #4D3D33 !important;
 		cursor: pointer;
 		display: inline-block;
 		font-family: "Raleway", Helvetica, sans-serif;
@@ -1909,8 +1909,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 2px #2ee4bb;
-			color: #2ee4bb !important;
+			box-shadow: inset 0 0 0 2px #6A5648;
+			color: #6A5648 !important;
 		}
 
 		input[type="submit"]:active,
@@ -1918,9 +1918,9 @@ input, select, textarea {
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: rgba(73, 252, 212, 0.25);
-			box-shadow: inset 0 0 0 2px #2ee4bb;
-			color: #2ee4bb !important;
+			background-color: rgba(106, 86, 72, 0.2);
+			box-shadow: inset 0 0 0 2px #6A5648;
+			color: #6A5648 !important;
 		}
 
 		input[type="submit"].small,
@@ -1987,9 +1987,9 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #49fcd4;
+			background-color: #6A5648;
 			box-shadow: none;
-			color: #000000 !important;
+			color: #f7f4ef !important;
 		}
 
 			input[type="submit"].primary:hover,
@@ -1997,7 +1997,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #93ffe7;
+				background-color: #7B6657;
 			}
 
 			input[type="submit"].primary:active,
@@ -2005,7 +2005,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #44f2cb;
+				background-color: #5A483C;
 			}
 
 		@media screen and (max-width: 736px) {
@@ -3249,8 +3249,8 @@ input, select, textarea {
 
 		#wrapper:before {
 			background-attachment: fixed;
-			background-color: #fff;
-			background-image: url("../../images/background_large.jpg");
+			background-color: #f7f4ef;
+			background-image: none;
 			background-position: center left;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -3286,7 +3286,7 @@ input, select, textarea {
 				}
 
 				#wrapper section > header h1 + p {
-					font-family: "Raleway", Helvetica, sans-serif;
+					font-family: "Source Sans Pro", Helvetica, sans-serif;
 					font-size: 0.8rem;
 					letter-spacing: 0.175em;
 					line-height: 1.5;
@@ -3369,33 +3369,36 @@ input, select, textarea {
 				}
 
 			#wrapper > section.intro {
-				align-items: flex-start;
+				align-items: center;
+				grid-template-areas: "content header";
+				grid-template-rows: 1fr;
 			}
 
-				#wrapper > section.intro > header {
-					padding-top: 4rem;
-					width: 100%;
+			#wrapper > section.intro > header {
+				padding-top: 4rem;
+				width: 100%;
+				justify-self: start;
+			text-align: left;
 				}
 
-					#wrapper > section.intro > header > * {
-						margin-left: auto;
-					}
-
-					#wrapper > section.intro > header:before {
-						left: auto;
-					}
-
-				#wrapper > section.intro > .content {
-					height: 100vh;
-					max-width: none;
+				#wrapper > section.intro > header:before {
+					left: auto;
+					display: none;
 				}
 
-			#wrapper > section:last-of-type > header:before {
-				height: 100%;
+			#wrapper > section.intro > .content {
+				height: 100vh;
+				max-width: none;
+				text-align: left;
 			}
 
-			#wrapper > section:last-of-type > header:after {
-				background: #43d9b8;
+				#wrapper > section.intro > .content > * {
+					margin-left: 0 !important;
+					margin-right: auto !important;
+					text-align: left;
+				}
+
+		#wrapper > section:last-of-type > header:after {
 				border-radius: 0.5rem;
 				bottom: -1.5rem;
 				content: '';
@@ -3461,14 +3464,31 @@ input, select, textarea {
 		}
 
 		#wrapper > section.intro > header > img {
-			max-width: 85%;
+			max-width: 50%;
 			display: block;
-			margin-left: auto;
+			margin-left: 0;
+			margin-bottom: 3rem;
 		}
 
 		#wrapper > section.intro > header h1 {
 			font-size: 3.75rem;
+			line-height: 1;
 			margin-bottom: 1.5rem;
+		}
+
+		#wrapper > section.intro > header h1:before,
+		#wrapper > section.intro > header h1:after {
+			display: none;
+		}
+
+		#wrapper > section.intro > header ul.actions {
+			justify-content: flex-start;
+			margin-left: 0;
+			padding-left: 0;
+		}
+
+		#wrapper > section.intro > header ul.actions li {
+			padding: 0;
 		}
 
 		#wrapper > section.intro > header:before {
@@ -3592,9 +3612,7 @@ input, select, textarea {
 
 					#wrapper section > header {
 						justify-self: start;
-						padding: 0;
-						text-align: left;
-						width: 100%;
+					padding: 0 1.5rem;
 					}
 
 						#wrapper section > header ul.actions {
@@ -3602,14 +3620,12 @@ input, select, textarea {
 						}
 
 					#wrapper section > .content {
-						padding: 0;
-						width: 100%;
+					padding: 0 1.5rem;
 						overflow-x: hidden;
 					}
 
 					#wrapper section > footer {
-						padding: 0;
-						text-align: left;
+					padding: 0 1.5rem;
 					}
 
 						#wrapper section > footer ul.actions {
@@ -3617,13 +3633,17 @@ input, select, textarea {
 						}
 
 				#wrapper > section {
-					margin: 0;
+					margin: 8rem 0 0 0;
 				}
+
+					#wrapper > section:first-child {
+						margin-top: 0;
+					}
 
 					#wrapper > section > header {
 						background-attachment: fixed;
-						background-color: #fff;
-						background-image: url("../../images/background_sm_md.jpg");
+						background-color: #f7f4ef;
+						background-image: none;
 						background-position: top right;
 						background-repeat: no-repeat;
 						background-size: contain;
@@ -3675,29 +3695,33 @@ input, select, textarea {
 
 					#wrapper > section.intro {
 						margin-bottom: 0;
+						grid-template-areas: "header content" "footer content";
 					}
 
-						#wrapper > section.intro > header {
-							margin-bottom: 0;
+					#wrapper > section.intro > header {
+						margin-bottom: 0;
+						justify-self: start;
+						text-align: left;
+					}
+
+						#wrapper > section.intro > header ul.actions {
+							display: none;
 						}
 
-							#wrapper > section.intro > header ul.actions {
-								display: none;
-							}
+						#wrapper > section.intro > header > * {
+							margin-left: 0;
+							margin-right: auto;
+							width: 100%;
+							text-align: left;
+						}
 
-							#wrapper > section.intro > header > * {
-								margin-left: 0;
-								margin-right: 0;
-								width: 100%;
-							}
+					#wrapper > section.intro > header > ul.actions {
+						margin-left: 0;
+					}
 
-							#wrapper > section.intro > header > ul.actions {
-								margin-left: -1rem;
-							}
-
-							#wrapper > section.intro > header:before {
-								margin-left: 0;
-							}
+						#wrapper > section.intro > header:before {
+							margin-left: 0;
+						}
 
 					#wrapper > section:last-of-type > header:after {
 						display: none;
@@ -3706,14 +3730,6 @@ input, select, textarea {
 				#wrapper .copyright {
 					left: 0;
 					width: 100%;
-				}
-
-				#wrapper section {
-					margin: 6rem 0 0 0;
-				}
-
-				#wrapper > section {
-					margin: 0;
 				}
 
 					#wrapper > section > header {
@@ -3744,13 +3760,13 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#wrapper section {
-				margin: 3rem 0 0 0;
+			#wrapper > section {
+				margin: 5rem 0 0 0;
 			}
 
-			#wrapper > section {
-				margin: 0;
-			}
+				#wrapper > section:first-child {
+					margin-top: 0;
+				}
 
 				#wrapper > section > header {
 					padding: 3rem 2rem;
@@ -3767,10 +3783,20 @@ input, select, textarea {
 				#wrapper > section > footer {
 					padding: 0 2rem 3rem 2rem;
 				}
+			#wrapper > section.intro {
+				grid-template-areas: "header content" "footer content";
+			}
 
-				#wrapper > section.intro > header {
-					padding: 5.5rem 2rem 2.5rem 2rem;
-				}
+			#wrapper > section.intro > header {
+				padding: 5.5rem 2rem 2.5rem 2rem;
+				justify-self: start;
+				text-align: left;
+			}
+
+			#wrapper > section.intro > header > * {
+				margin-left: 0;
+				text-align: left;
+			}
 
 			#wrapper .copyright {
 				padding: 0 2rem 2rem 2rem;
@@ -3780,13 +3806,13 @@ input, select, textarea {
 
 		@media screen and (max-width: 360px) {
 
-			#wrapper section {
-				margin: 2.25rem 0 0 0;
+			#wrapper > section {
+				margin: 4rem 0 0 0;
 			}
 
-			#wrapper > section {
-				margin: 0;
-			}
+				#wrapper > section:first-child {
+					margin-top: 0;
+				}
 
 				#wrapper > section > header {
 					padding: 2.25rem 1.5rem;
@@ -3803,10 +3829,20 @@ input, select, textarea {
 				#wrapper > section > footer {
 					padding: 0 1.5rem 2.25rem 1.5rem;
 				}
+			#wrapper > section.intro {
+				grid-template-areas: "header content" "footer content";
+			}
 
-				#wrapper > section.intro > header {
-					padding: 4.875rem 1.5rem 1.875rem 1.5rem;
-				}
+			#wrapper > section.intro > header {
+				padding: 4.875rem 1.5rem 1.875rem 1.5rem;
+				justify-self: start;
+				text-align: left;
+			}
+
+			#wrapper > section.intro > header > * {
+				margin-left: 0;
+				text-align: left;
+			}
 
 			#wrapper .copyright {
 				padding: 0 1.5rem 1.5rem 1.5rem;
@@ -3883,7 +3919,6 @@ input, select, textarea {
 			}
 
 		}
-
 	body.is-ie #wrapper section {
 		display: flex;
 		flex-wrap: wrap;
