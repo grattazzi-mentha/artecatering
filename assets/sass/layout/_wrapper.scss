@@ -296,14 +296,11 @@
 						h1 {
 						margin: 0;
 							&:before {
-								top: 3rem;
-							}
-
-							&:after {
-								top: 2.75rem;
-							}
+							top: 1rem;
 						}
 
+						&:after {
+							top: 0.75rem;
 				}
 
 				> .content {

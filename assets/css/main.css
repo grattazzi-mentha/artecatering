@@ -3362,11 +3362,11 @@ input, select, textarea {
 				display: block;
 			}
 				#wrapper > section > header h1:before {
-					top: 3rem;
+					top: 1rem;
 				}
 
 				#wrapper > section > header h1:after {
-					top: 2.75rem;
+					top: 0.75rem;
 				}
 
 			#wrapper > section > .content > section {
