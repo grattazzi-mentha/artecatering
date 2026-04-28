@@ -3362,11 +3362,12 @@ input, select, textarea {
 				display: block;
 			}
 				#wrapper > section > header h1:before {
-				top: 1rem;
-			}
+					top: 3rem;
+				}
 
 				#wrapper > section > header h1:after {
-					top: 0.75rem;
+					top: 2.75rem;
+				}
 
 			#wrapper > section > .content > section {
 				position: relative;
@@ -3378,7 +3379,6 @@ input, select, textarea {
 
 			#wrapper > section.intro {
 				align-items: flex-start;
-				grid-template-columns: 30vw 70vw;
 			}
 
 				#wrapper > section.intro > header {
