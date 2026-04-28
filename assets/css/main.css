@@ -3379,7 +3379,8 @@ input, select, textarea {
 				}
 
 					#wrapper > section.intro > header > * {
-						margin-left: 0;
+						margin-left: calc(50vw - 10rem);
+						width: 20rem;
 					}
 
 					#wrapper > section.intro > header img {
@@ -3388,11 +3389,12 @@ input, select, textarea {
 					}
 
 					#wrapper > section.intro > header h1 {
-						font-size: 2.5rem;
+						font-size: 3.75rem;
 					}
 
 					#wrapper > section.intro > header:before {
 						left: auto;
+						margin-left: calc(50vw - 10rem);
 					}
 
 				#wrapper > section.intro > .content {
