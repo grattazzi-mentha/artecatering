@@ -240,7 +240,7 @@ input, select, textarea {
 
 	h1 {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 3.75rem;
+		font-size: 5rem;
 		font-weight: 700;
 		letter-spacing: -0.05em;
 		line-height: 1.1;
@@ -3282,12 +3282,9 @@ input, select, textarea {
 			}
 
 				#wrapper section > header h2 {
-				margin: 0 0 1.5rem 0;
-			}
-
-				#wrapper > section > header h2:before, #wrapper > section > header h2:after {
-					display: none !important;
+					margin: 0 0 5rem 0;
 				}
+
 				#wrapper section > header h1 + p {
 					font-family: "Raleway", Helvetica, sans-serif;
 					font-size: 0.8rem;
@@ -3352,36 +3349,15 @@ input, select, textarea {
 				}
 
 			#wrapper > section > header h1 {
-			margin: 0;
-		}
-
-		#wrapper > section.intro > header h1 {
-			margin-left: auto;
-			margin-bottom: 3rem;
-		}
-
-			#wrapper > section.intro > header h1 > img {
-				max-width: 120px;
-				height: auto;
-				margin-top: 2rem;
-				margin-bottom: 2rem;
-				display: block;
-			}
-
-			#wrapper > section.intro > header h1:before {
-				top: calc(2rem + 0.75rem);
-			}
-
-			#wrapper > section.intro > header h1:after {
-				top: calc(2rem + 0.75rem);
+				margin-top: -2rem;
 			}
 
 				#wrapper > section > header h1:before {
-					top: 1rem;
+					top: 3rem;
 				}
 
 				#wrapper > section > header h1:after {
-					top: 0.75rem;
+					top: 2.75rem;
 				}
 
 			#wrapper > section > .content > section {
@@ -3403,11 +3379,6 @@ input, select, textarea {
 
 					#wrapper > section.intro > header > * {
 						margin-left: auto;
-					}
-
-					#wrapper > section.intro > header > img {
-						margin-top: 2rem;
-						margin-bottom: 2rem;
 					}
 
 					#wrapper > section.intro > header:before {
@@ -3486,6 +3457,10 @@ input, select, textarea {
 				width: 32rem;
 			}
 
+		#wrapper > section.intro > header > * {
+			width: 20rem;
+		}
+
 		#wrapper > section.intro > header:before {
 			margin-left: calc(50vw - 10rem);
 		}
@@ -3555,6 +3530,13 @@ input, select, textarea {
 						width: 30rem;
 					}
 
+				#wrapper > section.intro > header > * {
+					width: 21rem;
+				}
+
+				#wrapper > section.intro > header:before {
+					margin-left: calc(50vw - 8rem);
+				}
 
 		}
 

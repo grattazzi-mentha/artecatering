@@ -71,31 +71,10 @@
 
 							// Hack: Chrome's grid implementation screws up absolute element placement within a static child element.
 
-								// Add space under and over logo.
-									> img {
-										margin-top: 2rem;
-										margin-bottom: 2rem;
+								// Set width on all child elements and right-align.
+									> * {
+										width: (_size(header-width) - $pad);
 									}
-
-									// Logo positioning inside h1
-										> h1 > img {
-											max-width: 120px;
-											height: auto;
-											margin-top: 2rem;
-											margin-bottom: 2rem;
-											display: block;
-										}
-
-									// Align h1 (with logo) to the right
-										> h1 {
-											margin-left: auto;
-											margin-bottom: 3rem;
-										}
-
-									// Position line and dot to align with logo
-										> h1:before, > h1:after {
-											top: calc(2rem + 0.75rem);
-										}
 
 								// Line.
 									&:before {
@@ -220,11 +199,7 @@
 					text-align: right;
 
 					h2 {
-						margin: 0 0 1.5rem 0;
-
-						&:before, &:after {
-							display: none !important;
-						}
+						margin: 0 0 (_size(element-margin) * 2.5) 0;
 					}
 
 					h1 + p {
@@ -302,16 +277,21 @@
 						}
 
 						h1 {
-						margin: 0;
+							margin-top: -2rem;
 
-						&:before {
-							top: 1rem;
+							&:before {
+								top: 3rem;
+							}
+
+							&:after {
+								top: 2.75rem;
+							}
 						}
 
-						&:after {
-							top: 0.75rem;
-						}
-					}
+				}
+
+				> .content {
+					> section {
 						position: relative;
 
 						&:first-child {
