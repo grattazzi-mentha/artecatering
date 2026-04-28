@@ -76,6 +76,11 @@
 										width: (_size(header-width) - $pad);
 									}
 
+									// Add space under logo.
+										> img {
+											margin-bottom: 2rem;
+										}
+
 								// Line.
 									&:before {
 										margin-left: calc(50vw - #{$pad * 2});

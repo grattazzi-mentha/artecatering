@@ -3381,6 +3381,10 @@ input, select, textarea {
 						margin-left: auto;
 					}
 
+					#wrapper > section.intro > header > img {
+						margin-bottom: 2rem;
+					}
+
 					#wrapper > section.intro > header:before {
 						left: auto;
 					}
