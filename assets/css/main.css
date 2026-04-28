@@ -3375,26 +3375,14 @@ input, select, textarea {
 				#wrapper > section.intro > header {
 					padding-top: 4rem;
 					width: 100%;
-					text-align: left;
 				}
 
 					#wrapper > section.intro > header > * {
-						margin-left: calc(50vw - 10rem);
-						width: 20rem;
-					}
-
-					#wrapper > section.intro > header img {
-						display: block;
-						margin-bottom: 2rem;
-					}
-
-					#wrapper > section.intro > header h1 {
-						font-size: 3.75rem;
+						margin-left: auto;
 					}
 
 					#wrapper > section.intro > header:before {
 						left: auto;
-						margin-left: calc(50vw - 10rem);
 					}
 
 				#wrapper > section.intro > .content {
