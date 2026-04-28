@@ -84,6 +84,11 @@
 											display: block;
 										}
 
+									// Align h1 (with logo) to the right
+										> h1 {
+											margin-left: auto;
+										}
+
 								// Line.
 									&:before {
 										margin-left: calc(50vw - #{$pad * 2});
@@ -290,16 +295,15 @@
 
 						h1 {
 						margin: 0;
-							&:before {
+
+						&:before {
 							top: 1rem;
 						}
 
 						&:after {
 							top: 0.75rem;
-				}
-
-				> .content {
-					> section {
+						}
+					}
 						position: relative;
 
 						&:first-child {

@@ -240,7 +240,7 @@ input, select, textarea {
 
 	h1 {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 5rem;
+		font-size: 3.75rem;
 		font-weight: 700;
 		letter-spacing: -0.05em;
 		line-height: 1.1;
@@ -3352,8 +3352,11 @@ input, select, textarea {
 				}
 
 			#wrapper > section > header h1 {
-			margin-top: 0;
 			margin: 0;
+		}
+
+		#wrapper > section.intro > header h1 {
+			margin-left: auto;
 		}
 
 			#wrapper > section.intro > header h1 > img {
