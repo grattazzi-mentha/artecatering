@@ -3424,7 +3424,6 @@ input, select, textarea {
 
 			#wrapper section > header {
 				padding: 0 10rem 0 5rem;
-				width: 35rem;
 			}
 
 			#wrapper section > .content {
@@ -3458,7 +3457,7 @@ input, select, textarea {
 			}
 
 		#wrapper > section.intro > header > * {
-			width: 20rem;
+			width: auto;
 		}
 
 		#wrapper > section.intro > header:before {
