@@ -294,13 +294,13 @@
 						}
 
 						h1 {
-						margin: 0;
+							margin: 0;
 							&:before {
-								top: 3rem;
+								top: 1rem;
 							}
 
 							&:after {
-								top: 2.75rem;
+								top: 0.75rem;
 							}
 						}
 
@@ -319,6 +319,7 @@
 				// Intro.
 					&.intro {
 						align-items: center;
+						grid-template-columns: 30vw 70vw;
 
 						> header {
 							padding-top: 4rem;
