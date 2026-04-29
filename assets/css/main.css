@@ -121,12 +121,12 @@ input, select, textarea {
 	}
 
 	html {
-		overflow-x: hidden;
+		/* overflow-x: hidden removed — causes Chrome scroll hitch */
 	}
 
 	body {
 		background: #f7f4ef;
-		overflow-x: hidden;
+		/* overflow-x: hidden removed — causes Chrome scroll hitch */
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3205,7 +3205,7 @@ input, select, textarea {
 		}
 
 			ul.feature-icons li i {
-			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 512 512'%3E%3Cpath d='M256,0l221.7,128v256L256,512L34.3,384V128L256,0z' fill='rgba(62, 49, 41, 0.1)' /%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 512 512'%3E%3Cpath d='M256,0l221.7,128v256L256,512L34.3,384V128L256,0z' fill='%23f7f4ef' /%3E%3C/svg%3E");
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -3245,12 +3245,13 @@ input, select, textarea {
 
 	#wrapper {
 		position: relative;
-		width: 100vw;
-		padding: 0 0 10rem 0;
+		width: 100%;
+		padding: 0;
+		overflow-x: hidden;
 	}
 
 		#wrapper:before {
-			background-attachment: fixed;
+			background-attachment: scroll;
 			background-color: #f7f4ef;
 			background-image: none;
 			background-position: center left;
@@ -3364,7 +3365,7 @@ input, select, textarea {
 		}
 
 			#wrapper > section > header:before {
-				background: rgb(62, 49, 41);
+				background: rgb(90, 70, 60);
 				content: '';
 				display: block;
 				margin-top: 1rem;
@@ -3377,7 +3378,7 @@ input, select, textarea {
 			}
 
 				#wrapper > section > header h1:before {
-					background: rgb(62, 49, 41);
+					background: rgb(90, 70, 60);
 					content: '';
 					display: block;
 					height: 2px;
@@ -3386,7 +3387,7 @@ input, select, textarea {
 				}
 
 				#wrapper > section > header h2:before {
-					background: rgb(62, 49, 41);
+					background: rgb(90, 70, 60);
 					content: '';
 					display: block;
 					height: 2px;
@@ -3395,7 +3396,7 @@ input, select, textarea {
 				}
 
 				#wrapper > section > header h1:after {
-					background: rgb(62, 49, 41);
+					background: rgb(90, 70, 60);
 					border-radius: 50%;
 					content: '';
 					display: block;
@@ -3406,7 +3407,7 @@ input, select, textarea {
 				}
 
 				#wrapper > section > header h2:after {
-					background: rgb(62, 49, 41);
+					background: rgb(90, 70, 60);
 					border-radius: 50%;
 					content: '';
 					display: block;
@@ -3449,7 +3450,7 @@ input, select, textarea {
 				}
 
 			#wrapper > section.intro > .content {
-				height: 100vh;
+				min-height: 100vh;
 				max-width: none;
 				text-align: left;
 			}
@@ -3707,7 +3708,7 @@ input, select, textarea {
 					}
 
 					#wrapper > section > header {
-						background-attachment: fixed;
+						background-attachment: scroll;
 						background-color: #f7f4ef;
 						background-image: none;
 						background-position: top right;
@@ -4019,4 +4020,56 @@ input, select, textarea {
 			padding: 4rem;
 		}
 
+	}
+
+/* Section spacing + independent section backgrounds */
+	#wrapper {
+		--section-gap: 100px;
+		--section-gap-half: calc(var(--section-gap) / 2);
+
+		/* Change these colors per section */
+		--section-intro-bg: #f7f4ef;
+		--section-first-bg: #fcfcfc;
+		--section-specializzazione-bg: #fcfcfc;
+		--section-target-bg: #fcfcfc;
+		--section-contact-bg: #f7f4ef;
+	}
+
+	/* Spacing model: each section contributes half the inter-section gap */
+	#wrapper > section {
+		margin: 0 !important;
+		padding-top: 0;
+		padding-bottom: 0;
+		border-top: var(--section-gap) solid transparent;
+	}
+
+	/* No extra gap before first section */
+	#wrapper > section:first-child {
+		border-top-width: 0;
+	}
+
+	/* Independent backgrounds */
+	#wrapper > section#intro {
+		background-color: var(--section-intro-bg);
+		border-top-color: var(--section-intro-bg);
+	}
+
+	#wrapper > section#first {
+		background-color: var(--section-first-bg);
+		border-top-color: var(--section-first-bg);
+	}
+
+	#wrapper > section#specializzazione {
+		background-color: var(--section-specializzazione-bg);
+		border-top-color: var(--section-specializzazione-bg);
+	}
+
+	#wrapper > section#target {
+		background-color: var(--section-target-bg);
+		border-top-color: var(--section-target-bg);
+	}
+
+	#wrapper > section#contact {
+		background-color: var(--section-contact-bg);
+		border-top-color: var(--section-contact-bg);
 	}
