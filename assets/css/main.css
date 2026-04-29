@@ -3530,7 +3530,7 @@ input, select, textarea {
 			max-width: 50%;
 			display: block;
 			margin-left: 0;
-			margin-bottom: 3rem;
+			margin-bottom: 4rem;
 		}
 
 		#wrapper > section.intro > header h1 {
@@ -4067,6 +4067,7 @@ input, select, textarea {
 	#wrapper > section#target {
 		background-color: var(--section-target-bg);
 		border-top-color: var(--section-target-bg);
+		padding-bottom: 5rem;
 	}
 
 	#wrapper > section#contact {
