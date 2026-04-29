@@ -3247,7 +3247,7 @@ input, select, textarea {
 		position: relative;
 		width: 100%;
 		padding: 0;
-		overflow-x: hidden;
+		/* overflow-x: hidden removed — causes Chrome scroll hitch */
 	}
 
 		#wrapper:before {
