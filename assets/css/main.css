@@ -1980,6 +1980,35 @@ input, select, textarea {
 			opacity: 0.25;
 		}
 
+		@media screen and (max-width: 480px) {
+
+			form > .fields {
+				margin: 0 0 2rem 0;
+				width: 100%;
+			}
+
+				form > .fields > .field {
+					padding: 1.5rem 0 0 0;
+					width: 100%;
+				}
+
+			input[type="submit"],
+			input[type="reset"],
+			input[type="button"],
+			button,
+			.button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				height: auto;
+				line-height: 1.2;
+				padding: 0.85rem 1.25rem;
+				white-space: normal;
+				word-break: break-word;
+			}
+
+		}
+
 		input[type="submit"].primary,
 		input[type="reset"].primary,
 		input[type="button"].primary,
@@ -2095,25 +2124,25 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			form > .fields {
-				margin: -1.5rem 0 2rem -1.5rem;
-				width: calc(100% + 3rem);
+				margin: 0 0 2rem 0;
+				width: 100%;
 			}
 
 				form > .fields > .field {
-					padding: 1.5rem 0 0 1.5rem;
-					width: calc(100% - 1.5rem);
+					padding: 1.5rem 0 0 0;
+					width: 100%;
 				}
 
 					form > .fields > .field.half {
-						width: calc(100% - 1.5rem);
+						width: 100%;
 					}
 
 					form > .fields > .field.third {
-						width: calc(100% - 1.5rem);
+						width: 100%;
 					}
 
 					form > .fields > .field.quarter {
-						width: calc(100% - 1.5rem);
+						width: 100%;
 					}
 
 		}
@@ -2234,6 +2263,7 @@ input, select, textarea {
 			font-size: 1.27rem;
 			font-weight: 300;
 			letter-spacing: normal;
+			overflow-wrap: anywhere;
 			padding-left: 2.675rem;
 			padding-right: 0.875rem;
 			position: relative;
@@ -2599,7 +2629,7 @@ input, select, textarea {
 			}
 
 				ul.items > li > h3 {
-					margin: 0 0 1rem 0;
+					margin: 0 0 0.5rem 0;
 				}
 
 				ul.items > li > :last-child {
@@ -2646,6 +2676,7 @@ input, select, textarea {
 	}
 
 		ul.actions li {
+			min-width: 0;
 			padding: 0 0 0 1rem;
 			vertical-align: middle;
 		}
@@ -3169,19 +3200,20 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			.gallery {
-				margin: -0.625rem 0 0 -0.625rem;
-				width: calc(100% + 0.625rem);
+				gap: 0.625rem;
+				margin: 0;
+				width: 100%;
 			}
 
 				.gallery a,
 				.gallery .video-tile {
-					margin: 0.625rem 0 0 0.625rem;
-					width: calc(50% - 0.625rem);
+					margin: 0;
+					width: calc(50% - 0.3125rem);
 				}
 
 				.gallery a.landscape,
 				.gallery .video-tile.landscape {
-					width: calc(100% - 0.625rem);
+					width: 100%;
 				}
 
 					.gallery a img,
@@ -3238,6 +3270,7 @@ input, select, textarea {
 
 		ul.feature-icons li {
 			margin: 3.5rem 0 0 0;
+			min-width: 0;
 			padding: 0.5rem 0 0 4.5rem;
 			position: relative;
 			width: 100%;
@@ -3320,6 +3353,7 @@ input, select, textarea {
 			#wrapper section > header {
 				grid-area: header;
 				justify-self: end;
+				min-width: 0;
 				text-align: right;
 			}
 
@@ -3347,7 +3381,24 @@ input, select, textarea {
 			#wrapper section > .content {
 				grid-area: content;
 				max-width: 60rem;
+				min-width: 0;
 				position: relative;
+			}
+
+			#wrapper section > footer {
+				min-width: 0;
+			}
+
+			#wrapper > section > .content > section {
+				min-width: 0;
+			}
+
+			#wrapper section > .content img,
+			#wrapper section > .content video,
+			#wrapper section > .content iframe,
+			#wrapper section > .content canvas,
+			#wrapper section > .content svg {
+				max-width: 100%;
 			}
 
 			#wrapper > section:not(.intro) > .content > * {
@@ -3394,6 +3445,27 @@ input, select, textarea {
 				grid-area: footer;
 				text-align: right;
 			}
+
+				#wrapper > section > footer h3 {
+					margin: 0 0 0.5rem 0;
+				}
+
+				#wrapper > section#contact footer ul.items > li {
+					margin: 0 0 2rem 0;
+				}
+
+					#wrapper > section#contact footer ul.items > li > h3 {
+						margin: 0 0 0.2rem 0;
+					}
+
+				#wrapper > section#contact .actions input[type="submit"],
+				#wrapper > section#contact .actions button[type="submit"] {
+					display: inline-block;
+					height: 3rem;
+					line-height: 3rem;
+					padding-bottom: 0;
+					padding-top: 0;
+				}
 
 				#wrapper section > footer ul.actions {
 					justify-content: flex-end;
@@ -3515,6 +3587,8 @@ input, select, textarea {
 			color: rgba(0, 0, 0, 0.25);
 			font-size: 1.27rem;
 			left: 50vw;
+			margin-top: 2rem;
+			overflow-wrap: anywhere;
 			position: relative;
 			width: 50vw;
 		}
@@ -3718,6 +3792,9 @@ input, select, textarea {
 
 					#wrapper section > header {
 						justify-self: start;
+						text-align: left;
+						max-width: 100%;
+						width: 100%;
 					padding: 0 1.5rem;
 					}
 
@@ -3727,10 +3804,10 @@ input, select, textarea {
 
 					#wrapper section > .content {
 					padding: 0.7rem 1.5rem 0 1.5rem;
-						overflow-x: hidden;
 					}
 
 					#wrapper section > footer {
+						text-align: left;
 					padding: 0 1.5rem;
 					}
 
@@ -3739,7 +3816,7 @@ input, select, textarea {
 						}
 
 				#wrapper > section {
-					margin: 8rem 0 0 0;
+					margin: 6rem 0 0 0;
 				}
 
 					#wrapper > section:first-child {
@@ -3747,16 +3824,15 @@ input, select, textarea {
 					}
 
 					#wrapper > section > header {
-						background-attachment: scroll;
-						background-color: #f7f4ef;
 						background-image: none;
-						background-position: top right;
-						background-repeat: no-repeat;
-						background-size: contain;
 					}
 
 						#wrapper > section > header > * {
 							max-width: 25rem;
+						}
+
+						#wrapper > section:not(.intro) > header h2 {
+							margin: 0 0 1.5rem 0;
 						}
 
 						#wrapper > section > header > :last-child {
@@ -3789,10 +3865,22 @@ input, select, textarea {
 
 						#wrapper > section > .content > section > header {
 							width: 100%;
+							margin-bottom: 1rem;
+							padding-left: 0;
+							padding-right: 0;
+						}
+
+						#wrapper > section > .content > section > .content {
+							padding-left: 0;
+							padding-right: 0;
 						}
 
 						#wrapper > section#specializzazione > .content > section > header {
 							padding-top: 0.7rem;
+						}
+
+						#wrapper > section:not(.intro) > .content > section > header h3 {
+							margin: 0 0 0.5rem 0;
 						}
 
 						#wrapper > section > .content > section:last-child {
@@ -3805,7 +3893,8 @@ input, select, textarea {
 
 					#wrapper > section.intro {
 						margin-bottom: 0;
-						grid-template-areas: "header content" "footer content";
+						grid-template-areas: "header" "content" "footer";
+						grid-template-columns: 1fr;
 					}
 
 					#wrapper > section.intro > header {
@@ -3815,7 +3904,8 @@ input, select, textarea {
 					}
 
 						#wrapper > section.intro > header ul.actions {
-							display: none;
+							display: flex;
+							justify-content: flex-start;
 						}
 
 						#wrapper > section.intro > header > * {
@@ -3823,6 +3913,14 @@ input, select, textarea {
 							margin-right: auto;
 							width: 100%;
 							text-align: left;
+						}
+
+						#wrapper > section.intro > header h1 {
+							font-size: 3rem;
+							line-height: 1.05;
+							overflow-wrap: anywhere;
+							word-break: break-word;
+							hyphens: auto;
 						}
 
 					#wrapper > section.intro > header > ul.actions {
@@ -3840,14 +3938,23 @@ input, select, textarea {
 				#wrapper .copyright {
 					left: 0;
 					width: 100%;
+					margin-top: 1.5rem;
 				}
 
 					#wrapper > section > header {
 						padding: 4rem 4rem;
 					}
 
+					#wrapper > section:not(.intro) > header {
+						padding: 0 4rem 0.5rem 4rem;
+					}
+
 					#wrapper > section > .content {
 						padding: 4rem 4rem;
+					}
+
+					#wrapper > section:not(.intro) > .content {
+						padding: 0.5rem 4rem 3rem 4rem;
 					}
 
 						#wrapper > section > .content > section {
@@ -3862,6 +3969,10 @@ input, select, textarea {
 						padding: 8rem 4rem 5rem 4rem;
 					}
 
+					#wrapper > section.intro > .content {
+						min-height: 62vh;
+					}
+
 				#wrapper .copyright {
 					padding: 0 4rem 4rem 4rem;
 				}
@@ -3871,7 +3982,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#wrapper > section {
-				margin: 5rem 0 0 0;
+				margin: 4rem 0 0 0;
 			}
 
 				#wrapper > section:first-child {
@@ -3890,11 +4001,24 @@ input, select, textarea {
 						margin: 3rem 0;
 					}
 
+					#wrapper > section > .content > section > header {
+						margin-bottom: 0.875rem;
+					}
+
 				#wrapper > section > footer {
 					padding: 0 2rem 3rem 2rem;
 				}
-			#wrapper > section.intro {
-				grid-template-areas: "header content" "footer content";
+
+			#wrapper > section:not(.intro) > header h2 {
+				margin: 0 0 1.25rem 0;
+			}
+
+			#wrapper > section:not(.intro) > header {
+				padding: 0 2rem 0.5rem 2rem;
+			}
+
+			#wrapper > section:not(.intro) > .content {
+				padding: 0.75rem 2rem 2.25rem 2rem;
 			}
 
 			#wrapper > section.intro > header {
@@ -3903,21 +4027,33 @@ input, select, textarea {
 				text-align: left;
 			}
 
+			#wrapper > section.intro > .content {
+				min-height: 50vh;
+			}
+
+			#wrapper > section.intro > header h1 {
+				font-size: 2.5rem;
+				line-height: 1.08;
+				overflow-wrap: anywhere;
+				word-break: break-word;
+				hyphens: auto;
+			}
+
 			#wrapper > section.intro > header > * {
 				margin-left: 0;
 				text-align: left;
 			}
 
 			#wrapper .copyright {
+				margin-top: 1rem;
 				padding: 0 2rem 2rem 2rem;
 			}
-
 		}
 
 		@media screen and (max-width: 360px) {
 
 			#wrapper > section {
-				margin: 4rem 0 0 0;
+				margin: 3rem 0 0 0;
 			}
 
 				#wrapper > section:first-child {
@@ -3936,11 +4072,24 @@ input, select, textarea {
 						margin: 2.25rem 0;
 					}
 
+					#wrapper > section > .content > section > header {
+						margin-bottom: 0.75rem;
+					}
+
 				#wrapper > section > footer {
 					padding: 0 1.5rem 2.25rem 1.5rem;
 				}
-			#wrapper > section.intro {
-				grid-template-areas: "header content" "footer content";
+
+			#wrapper > section:not(.intro) > header h2 {
+				margin: 0 0 1rem 0;
+			}
+
+			#wrapper > section:not(.intro) > header {
+				padding: 0 1.5rem 0.5rem 1.5rem;
+			}
+
+			#wrapper > section:not(.intro) > .content {
+				padding: 0.6rem 1.5rem 1.75rem 1.5rem;
 			}
 
 			#wrapper > section.intro > header {
@@ -3949,15 +4098,27 @@ input, select, textarea {
 				text-align: left;
 			}
 
+			#wrapper > section.intro > .content {
+				min-height: 42vh;
+			}
+
+			#wrapper > section.intro > header h1 {
+				font-size: 2.1rem;
+				line-height: 1.1;
+				overflow-wrap: anywhere;
+				word-break: break-word;
+				hyphens: auto;
+			}
+
 			#wrapper > section.intro > header > * {
 				margin-left: 0;
 				text-align: left;
 			}
 
 			#wrapper .copyright {
+				margin-top: 0.75rem;
 				padding: 0 1.5rem 1.5rem 1.5rem;
 			}
-
 		}
 
 	body.is-mobile #wrapper:before {
@@ -4030,6 +4191,12 @@ input, select, textarea {
 		--section-contact-bg: #f7f4ef;
 	}
 
+	@media screen and (max-width: 1152px) {
+		#wrapper {
+			--section-gap: 50px;
+		}
+	}
+
 	/* Spacing model: each section contributes half the inter-section gap */
 	#wrapper > section {
 		margin: 0 !important;
@@ -4068,4 +4235,10 @@ input, select, textarea {
 	#wrapper > section#contact {
 		background-color: var(--section-contact-bg);
 		border-top-color: var(--section-contact-bg);
+	}
+
+	@media screen and (max-width: 1152px) {
+		#wrapper > section#target {
+			padding-bottom: 2.5rem;
+		}
 	}
