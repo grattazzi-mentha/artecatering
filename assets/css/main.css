@@ -114,19 +114,15 @@ input, select, textarea {
 
 	html {
 		box-sizing: border-box;
+		scroll-behavior: smooth;
 	}
 
 	*, *:before, *:after {
 		box-sizing: inherit;
 	}
 
-	html {
-		/* overflow-x: hidden removed — causes Chrome scroll hitch */
-	}
-
 	body {
 		background: #f7f4ef;
-		/* overflow-x: hidden removed — causes Chrome scroll hitch */
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2962,7 +2958,8 @@ input, select, textarea {
 		width: calc(100% + 1.25rem);
 	}
 
-		.gallery a {
+		.gallery a,
+		.gallery .video-tile {
 			border-bottom: 0;
 			display: block;
 			margin: 1.25rem 0 0 1.25rem;
@@ -2980,15 +2977,33 @@ input, select, textarea {
 				width: 100%;
 			}
 
-			.gallery a.landscape {
+			.gallery .video-tile {
+				height: 25vw;
+				min-height: 18rem;
+				overflow: hidden;
+				background: #000;
+			}
+
+				.gallery .video-tile video {
+					display: block;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+					object-position: center;
+				}
+
+			.gallery a.landscape,
+			.gallery .video-tile.landscape {
 				width: 100%;
 			}
 
-				.gallery a.landscape img {
+				.gallery a.landscape img,
+				.gallery .video-tile.landscape {
 					height: 30vw;
 				}
 
-			.gallery a.portrait img {
+			.gallery a.portrait img,
+			.gallery .video-tile.portrait {
 				height: 30vw;
 			}
 
@@ -3082,7 +3097,8 @@ input, select, textarea {
 				opacity: 0;
 			}
 
-				.gallery .modal .inner img {
+				.gallery .modal .inner img,
+			.gallery .modal .inner video {
 					box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.35);
 					display: block;
 					max-height: 90vh;
@@ -3122,21 +3138,25 @@ input, select, textarea {
 
 		@media screen and (max-width: 1152px) {
 
-			.gallery a img {
+			.gallery a img,
+			.gallery .video-tile {
 				height: 20rem;
 			}
 
-			.gallery a.landscape img {
+			.gallery a.landscape img,
+			.gallery .video-tile.landscape {
 				height: 25rem;
 			}
 
-			.gallery a.portrait img {
+			.gallery a.portrait img,
+			.gallery .video-tile.portrait {
 				height: 25rem;
 			}
 
-			.gallery .modal .inner img {
-				max-width: 100vw;
-			}
+.gallery .modal .inner img,
+		.gallery .modal .inner video {
+			max-width: 100vw;
+		}
 
 		}
 
@@ -3147,37 +3167,50 @@ input, select, textarea {
 				width: calc(100% + 0.625rem);
 			}
 
-				.gallery a {
+				.gallery a,
+				.gallery .video-tile {
 					margin: 0.625rem 0 0 0.625rem;
 					width: calc(50% - 0.625rem);
 				}
 
-					.gallery a img {
+				.gallery a.landscape,
+				.gallery .video-tile.landscape {
+					width: calc(100% - 0.625rem);
+				}
+
+					.gallery a img,
+					.gallery .video-tile {
 						height: 20rem;
 					}
 
-					.gallery a.landscape img {
+					.gallery a.landscape img,
+					.gallery .video-tile.landscape {
 						height: 20rem;
 					}
 
-					.gallery a.portrait img {
+					.gallery a.portrait img,
+					.gallery .video-tile.portrait {
 						height: 30rem;
 					}
 
 		}
 
+
 		@media screen and (max-width: 480px) {
 
-			.gallery a img {
+			.gallery a img,
+			.gallery .video-tile {
 				height: 12rem;
 				min-height: 0;
 			}
 
-			.gallery a.landscape img {
+			.gallery a.landscape img,
+			.gallery .video-tile.landscape {
 				height: 12rem;
 			}
 
-			.gallery a.portrait img {
+			.gallery a.portrait img,
+			.gallery .video-tile.portrait {
 				height: 14rem;
 			}
 
@@ -3937,57 +3970,13 @@ input, select, textarea {
 		background-position: 25% 23%;
 	}
 
-	#wrapper:before {
-		transition: opacity 1s ease;
-	}
-
-		body.is-preload #wrapper:before {
-			opacity: 0;
-		}
-
 	#wrapper > section.intro {
-		transition: opacity 1s ease;
 		opacity: 1;
 	}
 
-		#wrapper > section.intro > header {
-			transition: transform 1s ease;
-		}
-
-		#wrapper > section.intro > .content {
-			transition: transform 1s ease;
-		}
-
-		body.is-preload #wrapper > section.intro {
-			opacity: 0;
-		}
-
-			body.is-preload #wrapper > section.intro > header {
-				transform: translateY(1rem);
-			}
-
-			body.is-preload #wrapper > section.intro > .content {
-				transform: translateY(-1rem);
-			}
-
 		@media screen and (max-width: 1280px) {
 
-			#wrapper > section.intro > header > * {
-				transition: transform 1s ease, opacity 1s ease;
-			}
 
-			body.is-preload #wrapper > section.intro > header {
-				transform: none;
-			}
-
-				body.is-preload #wrapper > section.intro > header > * {
-					transform: translate(-0.5rem);
-					opacity: 0;
-				}
-
-			body.is-preload #wrapper > section.intro > .content {
-				transform: none;
-			}
 
 		}
 	body.is-ie #wrapper section {

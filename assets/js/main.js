@@ -38,7 +38,9 @@
 	// Scrolly.
 		$('.scrolly')
 			.scrolly({
-				offset: 100
+				offset: 100,
+				speed: 900,
+				easing: 'swing'
 			});
 
 	// Polyfill: Object fit.
@@ -65,7 +67,21 @@
 			$('.gallery > a').each(function() {
 
 				var $this = $(this),
-					$img = $this.children('img');
+					$img = $this.children('img'),
+					href = $this.attr('href');
+
+				// Video item? Replace <a> with an inline <video>.
+					if (href && href.match(/\.(mp4|webm|ogg|mov)$/i)) {
+						$('<div class="video-tile"><video controls playsinline></video></div>')
+							.addClass($this.attr('class'))
+							.find('video')
+								.attr('src', href)
+								.attr('poster', $img.attr('src'))
+							.end()
+							.insertAfter($this);
+						$this.remove();
+						return;
+					}
 
 				// Apply img as background.
 					$this
@@ -82,6 +98,28 @@
 
 		}
 
+	// Convert video links to inline players (all browsers).
+		$('.gallery > a').each(function() {
+
+			var $this = $(this),
+				$img = $this.children('img'),
+				href = $this.attr('href');
+
+			if (!(href && href.match(/\.(mp4|webm|ogg|mov)$/i)))
+				return;
+
+			$('<div class="video-tile"><video controls playsinline></video></div>')
+				.addClass($this.attr('class'))
+				.find('video')
+					.attr('src', href)
+					.attr('poster', $img.attr('src'))
+				.end()
+				.insertAfter($this);
+
+			$this.remove();
+
+		});
+
 	// Gallery.
 		$('.gallery')
 			.on('click', 'a', function(event) {
@@ -89,11 +127,11 @@
 				var $a = $(this),
 					$gallery = $a.parents('.gallery'),
 					$modal = $gallery.children('.modal'),
-					$modalImg = $modal.find('img'),
+					$inner = $modal.find('.inner'),
 					href = $a.attr('href');
 
-				// Not an image? Bail.
-					if (!href.match(/\.(jpg|gif|png|mp4)$/))
+				// Not a supported media type? Bail.
+					if (!href.match(/\.(jpg|gif|png)$/i))
 						return;
 
 				// Prevent default.
@@ -107,28 +145,34 @@
 				// Lock.
 					$modal[0]._locked = true;
 
-				// Set src.
-					$modalImg.attr('src', href);
+				// Clear previous media.
+					$inner.empty();
+
+				// Build image element.
+					var $img = $('<img src="" />')
+						.attr('src', href)
+						.on('load', function() {
+							setTimeout(function() {
+								if (!$modal.hasClass('visible')) return;
+								$modal.addClass('loaded');
+							}, 275);
+						});
+
+					$inner.append($img);
 
 				// Set visible.
 					$modal.addClass('visible');
-
-				// Focus.
 					$modal.focus();
 
-				// Delay.
 					setTimeout(function() {
-
-						// Unlock.
-							$modal[0]._locked = false;
-
+						$modal[0]._locked = false;
 					}, 600);
 
 			})
 			.on('click', '.modal', function(event) {
 
 				var $modal = $(this),
-					$modalImg = $modal.find('img');
+					$inner = $modal.find('.inner');
 
 				// Locked? Bail.
 					if ($modal[0]._locked)
@@ -144,20 +188,22 @@
 				// Lock.
 					$modal[0]._locked = true;
 
+				// Pause video if present.
+					var video = $inner.find('video')[0];
+					if (video) video.pause();
+
 				// Clear visible, loaded.
-					$modal
-						.removeClass('loaded')
+					$modal.removeClass('loaded');
 
 				// Delay.
 					setTimeout(function() {
 
-						$modal
-							.removeClass('visible')
+						$modal.removeClass('visible');
 
 						setTimeout(function() {
 
-							// Clear src.
-								$modalImg.attr('src', '');
+							// Clear media.
+								$inner.empty();
 
 							// Unlock.
 								$modal[0]._locked = false;
@@ -185,24 +231,6 @@
 					event.stopPropagation();
 
 			})
-			.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /></div></div>')
-				.find('img')
-					.on('load', function(event) {
-
-						var $modalImg = $(this),
-							$modal = $modalImg.parents('.modal');
-
-						setTimeout(function() {
-
-							// No longer visible? Bail.
-								if (!$modal.hasClass('visible'))
-									return;
-
-							// Set loaded.
-								$modal.addClass('loaded');
-
-						}, 275);
-
-					});
+			.prepend('<div class="modal" tabIndex="-1"><div class="inner"></div></div>');
 
 })(jQuery);
