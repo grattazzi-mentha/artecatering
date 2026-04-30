@@ -72,13 +72,20 @@
 
 				// Video item? Replace <a> with an inline <video>.
 					if (href && href.match(/\.(mp4|webm|ogg|mov)$/i)) {
-						$('<div class="video-tile"><video controls playsinline></video></div>')
-							.addClass($this.attr('class'))
-							.find('video')
-								.attr('src', href)
-								.attr('poster', $img.attr('src'))
-							.end()
-							.insertAfter($this);
+						var $tile = $('<div class="video-tile"><video loop muted controls playsinline preload="metadata"></video></div>')
+							.addClass($this.attr('class')),
+							$video = $tile.find('video');
+
+						$video
+							.attr('src', href)
+							.attr('poster', $img.attr('src'))
+							.attr('controlslist', 'nodownload noplaybackrate noremoteplayback')
+							.attr('disablepictureinpicture', '')
+							.attr('disableremoteplayback', '')
+							.prop('muted', true);
+
+						$tile.insertAfter($this);
+
 						$this.remove();
 						return;
 					}
@@ -108,16 +115,31 @@
 			if (!(href && href.match(/\.(mp4|webm|ogg|mov)$/i)))
 				return;
 
-			$('<div class="video-tile"><video controls playsinline></video></div>')
-				.addClass($this.attr('class'))
-				.find('video')
-					.attr('src', href)
-					.attr('poster', $img.attr('src'))
-				.end()
-				.insertAfter($this);
+			var $tile = $('<div class="video-tile"><video loop muted controls playsinline preload="metadata"></video></div>')
+				.addClass($this.attr('class')),
+				$video = $tile.find('video');
+
+			$video
+				.attr('src', href)
+				.attr('poster', $img.attr('src'))
+				.attr('controlslist', 'nodownload noplaybackrate noremoteplayback')
+				.attr('disablepictureinpicture', '')
+				.attr('disableremoteplayback', '')
+				.prop('muted', true);
+
+			$tile.insertAfter($this);
 
 			$this.remove();
 
+		});
+
+		$('.gallery').on('contextmenu', 'video', function(event) {
+			event.preventDefault();
+		});
+
+		$('.gallery').on('volumechange', 'video', function() {
+			this.muted = true;
+			this.volume = 0;
 		});
 
 	// Gallery.

@@ -2992,6 +2992,12 @@ input, select, textarea {
 					object-position: center;
 				}
 
+				.gallery .video-tile video::-webkit-media-controls-volume-slider,
+				.gallery .video-tile video::-webkit-media-controls-mute-button,
+				.gallery .video-tile video::-webkit-media-controls-volume-control-container {
+					display: none;
+				}
+
 			.gallery a.landscape,
 			.gallery .video-tile.landscape {
 				width: 100%;
