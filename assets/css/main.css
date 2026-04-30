@@ -2188,7 +2188,7 @@ input, select, textarea {
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #2ee4bb;
+			border-color: rgb(62, 49, 41);
 		}
 
 	label {
