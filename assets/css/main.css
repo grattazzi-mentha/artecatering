@@ -2832,6 +2832,7 @@ input, select, textarea {
 	table {
 		margin: 0 0 2rem 0;
 		width: 100%;
+			border: solid 1px rgba(62, 49, 41, 0.25);
 	}
 
 		table tbody tr {
@@ -2841,7 +2842,7 @@ input, select, textarea {
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(62, 49, 41, 0.1);
+				background-color: rgba(62, 49, 41, 0.025);
 			}
 
 		table td {
@@ -2858,6 +2859,7 @@ input, select, textarea {
 
 		table thead {
 			border-bottom: solid 2px rgba(62, 49, 41, 0.25);
+			background-color: rgba(62, 49, 41, 0.1);
 		}
 
 		table tfoot {
@@ -4242,18 +4244,42 @@ input, select, textarea {
 		border-top-color: var(--section-intro-bg);
 	}
 
-	body.privacy-page #wrapper > section#privacy-first {
+	body.privacy-page #wrapper > section#privacy-content {
 		background-color: var(--section-first-bg);
 		border-top-color: var(--section-first-bg);
 	}
 
-		body.privacy-page #wrapper > section#privacy-first > .content {
+		body.privacy-page #wrapper > section#privacy-content > .content {
 			padding-bottom: 3rem;
 		}
 
 	body.privacy-page #wrapper > section#privacy-contact {
 		background-color: var(--section-contact-bg);
 		border-top-color: var(--section-contact-bg);
+	}
+
+	body.privacy-page #wrapper h3 {
+		padding-top: 1.5rem;
+	}
+
+	body.privacy-page #wrapper > section h3:first-of-type {
+		padding-top: 0;
+	}
+
+	body.privacy-page .table-scroll {
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	body.privacy-page #wrapper li {
+		line-height: 1.4;
+	}
+
+	body.privacy-page .table-scroll table.cookies {
+		min-width: 600px;
+		width: 100%;
+		border-collapse: collapse;
 	}
 
 	@media screen and (max-width: 1152px) {
