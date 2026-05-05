@@ -4237,8 +4237,68 @@ input, select, textarea {
 		border-top-color: var(--section-contact-bg);
 	}
 
+	body.privacy-page #wrapper > section#privacy-intro {
+		background-color: var(--section-intro-bg);
+		border-top-color: var(--section-intro-bg);
+	}
+
+	body.privacy-page #wrapper > section#privacy-first {
+		background-color: var(--section-first-bg);
+		border-top-color: var(--section-first-bg);
+	}
+
+		body.privacy-page #wrapper > section#privacy-first > .content {
+			padding-bottom: 3rem;
+		}
+
+	body.privacy-page #wrapper > section#privacy-contact {
+		background-color: var(--section-contact-bg);
+		border-top-color: var(--section-contact-bg);
+	}
+
 	@media screen and (max-width: 1152px) {
 		#wrapper > section#target {
 			padding-bottom: 2.5rem;
 		}
 	}
+
+/* Privacy page intro centering */
+body.privacy-page #wrapper > section#privacy-intro {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+body.privacy-page #wrapper > section#privacy-intro > header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	width: 100% !important;
+	max-width: none;
+	margin: 0 auto;
+	padding-left: 5rem;
+	padding-right: 5rem;
+	justify-self: center;
+}
+
+body.privacy-page #wrapper > section#privacy-intro > header > * {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+body.privacy-page #wrapper > section#privacy-intro > header h1 {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+@media screen and (max-width: 736px) {
+	body.privacy-page #wrapper > section#privacy-intro > header {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
