@@ -43,6 +43,30 @@
 				easing: 'swing'
 			});
 
+	// Autoplay gallery videos only on stacked layouts.
+		var stackedQuery = window.matchMedia('(max-width: 1152px)');
+
+		var syncStackedVideoAutoplay = function() {
+			$('.gallery .video-tile video').each(function() {
+				var video = this;
+
+				if (stackedQuery.matches) {
+					video.muted = true;
+					video.autoplay = true;
+					$(video).attr('autoplay', 'autoplay');
+
+					var playPromise = video.play();
+					if (playPromise && playPromise.catch)
+						playPromise.catch(function() {});
+				}
+				else {
+					video.autoplay = false;
+					$(video).removeAttr('autoplay');
+					video.pause();
+				}
+			});
+		};
+
 	// Polyfill: Object fit.
 		if (!browser.canUse('object-fit')) {
 
@@ -82,6 +106,7 @@
 							.attr('controlslist', 'nodownload noplaybackrate noremoteplayback')
 							.attr('disablepictureinpicture', '')
 							.attr('disableremoteplayback', '')
+							.prop('autoplay', stackedQuery.matches)
 							.prop('muted', true);
 
 						$tile.insertAfter($this);
@@ -125,6 +150,7 @@
 				.attr('controlslist', 'nodownload noplaybackrate noremoteplayback')
 				.attr('disablepictureinpicture', '')
 				.attr('disableremoteplayback', '')
+				.prop('autoplay', stackedQuery.matches)
 				.prop('muted', true);
 
 			$tile.insertAfter($this);
@@ -132,6 +158,13 @@
 			$this.remove();
 
 		});
+
+		syncStackedVideoAutoplay();
+
+		if (stackedQuery.addEventListener)
+			stackedQuery.addEventListener('change', syncStackedVideoAutoplay);
+		else if (stackedQuery.addListener)
+			stackedQuery.addListener(syncStackedVideoAutoplay);
 
 		$('.gallery').on('contextmenu', 'video', function(event) {
 			event.preventDefault();
